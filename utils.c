@@ -1,5 +1,43 @@
-#include "fractol.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cadlane <cadlane@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 01:15:30 by cadlane           #+#    #+#             */
+/*   Updated: 2024/08/10 01:39:17 by cadlane          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "fractol.h"
+#include "minilibx-linux/mlx.h"
+
+int ft_strncmp(char *s1, char *s2, int n)
+{
+    int i;
+
+    i = 0;
+    if (s1 == NULL || s2 == NULL || n <=0)
+        return (0);
+    while(s1[i] == s2[i] && s1[i] != '\0' && i <= (n-1))
+    {
+        i++;
+    }
+    return (s1[i] - s2[i]);
+}
+
+void ft_putstr(char *s)
+{
+    int i;
+
+    i = 0;
+    while(s[i])
+    {
+        write(1, &s[i], 1);
+        i++;
+    }
+}
 
 /*
  * [0..799] -> [-2..+2]
