@@ -1,2 +1,0 @@
- minilibX is a simple API. It is based on the X-Window system, which, in layman’s terms, is the foundation that allows graphical user interfaces (GUIs) to run on UNIX-like operating systems.
- minilibX is a simple API. It is based on the X-Window system, which, in layman’s terms, is the foundation that allows graphical user interfaces (GUIs) to run on UNIX-like operating systems.
