@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_fractal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cadlane <cadlane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 03:21:30 by cadlane           #+#    #+#             */
-/*   Updated: 2024/08/10 03:21:32 by cadlane          ###   ########.fr       */
+/*   Updated: 2024/08/11 04:30:44 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 	int			i;
 	int			color;
 	i = 0; 
-	z.x = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-	z.y = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	z.x = map(x, -2, +2, 0, WIDTH);
+	z.y = map(y, +2, -2, 0, HEIGHT);
 
 	// How many times you want to iterate z^2 + c
 	//	to check if the point escaped?
