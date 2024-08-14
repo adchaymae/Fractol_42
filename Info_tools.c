@@ -108,4 +108,7 @@ int main(void)
 mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0): Cette fonction affiche l'image dans la fenêtre à la position (0, 0).
 mlx_loop(mlx): C'est une boucle infinie qui attend des événements (comme fermer la fenêtre) pour que ton programme ne se termine pas immédiatement.
 6. Problème potentiel : tearing
-Le fait d'écrire des pixels directement dans l'image affichée peut provoquer un "tearing" (déchirure de l'image), où l'image semble décalée ou divisée lors du rafraîchissement. Pour éviter cela, tu peux utiliser deux images : une pour afficher et une autre pour écrire les pixels, puis échanger les deux images.*/
+Le fait d'écrire des pixels directement dans l'image affichée 
+peut provoquer un "tearing" (déchirure de l'image), où l'image semble décalée ou divisée lors du rafraîchissement. 
+Pour éviter cela, tu peux utiliser deux images : une pour afficher et une autre pour écrire les pixels, puis échanger les deux images.*/
+//-----------------------------my fractol------------------------------------------------

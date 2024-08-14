@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cadlane <cadlane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 01:15:30 by cadlane           #+#    #+#             */
-/*   Updated: 2024/08/10 01:39:17 by cadlane          ###   ########.fr       */
+/*   Updated: 2024/08/14 03:47:10 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,32 @@ t_complex   square_complex(t_complex z)
     result.x = (z.x * z.x) - (z.y * z.y);
     result.y = 2 * z.x * z.y;
     return result;
+}
+
+double	string_to_double(char *s)
+{
+	long	integer_part;
+	double	fractional_part;
+	double	pow;
+	int		sign;
+
+	integer_part = 0;
+	fractional_part = 0;
+	sign = +1;
+	pow = 1;
+	while ((*s >= 9 && *s <= 13) || 32 == *s)
+		++s;
+	while ('+' == *s || '-' == *s)
+		if ('-' == *s++)
+			sign = -sign;
+	while (*s != '.' && *s)
+		integer_part = (integer_part * 10) + (*s++ - 48);
+	if ('.' == *s)
+		++s;
+	while (*s)
+	{
+		pow /= 10;
+		fractional_part = fractional_part + (*s++ - 48) * pow;
+	}
+	return ((integer_part + fractional_part) * sign);
 }

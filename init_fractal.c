@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 03:21:09 by cadlane           #+#    #+#             */
-/*   Updated: 2024/08/11 18:57:41 by admin            ###   ########.fr       */
+/*   Updated: 2024/08/14 03:50:11 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	data_init(t_fractal *fractal)
 {
 	fractal->escape_value = 4; // 2 ^ 2, my hypotenuse
 	fractal->nb_iteraions = 42;
-	//fractal->shift_x = 0.0;
-	//fractal->shift_y = 0.0;
-	// zoom factor
+	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
+	//zoom factor;
 	fractal->zoom = 1.0;
 }
 

@@ -12,12 +12,12 @@
 */
 int	close_handler(t_fractal *fractal)
 {
-	mlx_destroy_image(fractal->mlx_connection,
+	mlx_destroy_image(fractal->mlx_init,
 					fractal->img.img_ptr);
-	mlx_destroy_window(fractal->mlx_connection,
+	mlx_destroy_window(fractal->mlx_init,
 						fractal->mlx_window);
-	mlx_destroy_display(fractal->mlx_connection);
-	free(fractal->mlx_connection);
+	mlx_destroy_display(fractal->mlx_init);
+	free(fractal->mlx_init);
 	exit(EXIT_SUCCESS);
 }
 
@@ -39,9 +39,9 @@ int	key_handler(int keysym, t_fractal *fractal)
 	else if (keysym == XK_Down)
 		fractal->shift_y += (0.5 * fractal->zoom);	
 	else if (keysym == XK_plus)
-		fractal->iterations_defintion += 10;
+		fractal->nb_iteraions += 10;
 	else if (keysym == XK_minus)	
-		fractal->iterations_defintion -= 10;
+		fractal->nb_iteraions -= 10;
 
 	// refresh the image
 	fractal_render(fractal);
@@ -76,14 +76,14 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
  * to change julia dynamically
  * int (*f)(int x, int y, void *param)
 */
-int	julia_track(int x, int y, t_fractal *fractal)
-{
-	if (!ft_strncmp(fractal->name, "julia", 5))
-	{
-		fractal->julia_x = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-		fractal->julia_y = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
-		fractal_render(fractal);
-	}
-	return 0;
-}
+// int	julia_track(int x, int y, t_fractal *fractal)
+// {
+// 	if (!ft_strncmp(fractal->name, "julia", 5))
+// 	{
+// 		fractal->julia_x = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
+// 		fractal->julia_y = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+// 		fractal_render(fractal);
+// 	}
+// 	return 0;
+// }
 
